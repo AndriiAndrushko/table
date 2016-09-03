@@ -1,0 +1,18 @@
+extends layout1
+block content
+    div.container
+
+
+        form(method="post" action='/edit/'+ a.id).container
+            fieldset
+                .form-group
+                    input#id.form-control(style="display : none" name='id' type='text' placeholder=a.id value=a.id )
+                .form-group
+                    label(for='firstName') Enter your new Name
+                    input#firstName.form-control(name='firstName' type='text' value=a.firstName)
+                .form-group
+                    label(for='lastName') Enter your new Surname
+                    input#lastName.form-control(name='lastName' type='text' value=a.lastName)
+
+                .form-group
+                    button.btn.btn-primery(type="submit") Save Changes

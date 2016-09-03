@@ -1,0 +1,15 @@
+doctype
+head
+
+    meta(charset="utf-8")
+    link( rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css",
+    crossorigin="anonymous")
+body
+    .container
+        h2 List of my imaginary friends
+        hr
+        ul.nav.nav-pills
+            li: a(href='/table') Table
+            li: a(href="/new") I've got a new friend
+        hr
+    block content
