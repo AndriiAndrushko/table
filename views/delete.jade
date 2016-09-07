@@ -1,0 +1,12 @@
+extends layout1
+block content
+    div.container
+        h1(style="color:red") Are you sure want to remove him from friend list  ?
+            h3 #{a.firstName} #{a.lastName}
+
+        form(method="post" action='/delete/' + a.id).container
+            input#id.form-control(style="display : none" name='id' type='text' placeholder=a.id value=a.id )
+            input#firstName.form-control(style="display : none" name='firstName' type='text' value=a.firstName)
+            input#lastName.form-control(style="display : none" name='lastName' type='text' value=a.lastName)
+            .form-group
+             button.btn.btn-primery(type="submit") FINISH HIM

@@ -1,0 +1,16 @@
+extends layout1
+block content
+    div.container
+        table.table.table-striped.table-responsive
+            each key in namesArr
+                tr
+
+                    td= key.firstName
+                    td= key.lastName
+
+                    td
+                        a.btn(href='/edit/'+key.id) EDIT
+                    td
+                        a.btn(href='/delete/'+key.id) DELETE
+        button
+            a(href='/new') add user

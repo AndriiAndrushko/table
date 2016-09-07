@@ -1,0 +1,17 @@
+extends layout1
+
+block content
+
+    form(method="post" action='/new').container
+        fieldset
+
+            .form-group
+                 label(for='firstName') User Name
+                 input#firstName.form-control(name='firstName' type='text')
+            .form-group
+                label(for='lastName') User Surname
+                input#lastName.form-control(name='lastName' type='text')
+            .form-group
+                button.btn.btn-primery(type="submit") Add
+
+
