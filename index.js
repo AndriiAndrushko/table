@@ -2,6 +2,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
+app.set('port', (process.env.PORT || 8080));
 var server, data, addElement;
 var a = {};
 var fs = require('fs');
@@ -69,9 +70,6 @@ app.post('/edit/:id', function(req,res){
     res.redirect('table');
 
 });
-
-//-------------------
-
 app.get('/delete/:id', function(req, res){
     var name = namesArr.forEach(function(item,i){
         if (item.id == req.params.id){
@@ -106,8 +104,7 @@ app.route('/new')
     })
    .post(function(req, res){
        addElement = req.body;
-        // console.log(addElement);
-       if(!addElement.firstName == '' && !addElement.lastName == '') {
+          if(!addElement.firstName == '' && !addElement.lastName == '') {
            namesArr.push(addElement);
            namesArr.forEach(function(item,i){
                item.id = i;
@@ -127,6 +124,6 @@ app.get('/table', function(req, res){
 app.get('/ar', function  (req, res){
     res.render('table', {namesArr: namesArray});
 });
-server= app.listen(8080, function(){
-    console.log('listen on port 8080');
+server= app.listen(app.get('port'), function(){
+    console.log('listen on port 8080 or another place');
 });
